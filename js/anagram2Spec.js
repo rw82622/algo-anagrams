@@ -1,12 +1,36 @@
-// Can you translate this driver code to unit tests?
-
 var ana = require("./anagram2"),
-listOfWords = ["threads", "trashed", "hardest", "hatreds", "hounds"];
+  listOfWords = [
+    "threads",
+    "sister",
+    "bowler",
+    "trashed",
+    "marbles",
+    "resits",
+    "hardest",
+    "blower",
+    "rambles",
+    "hatreds",
+    "resist",
+    "hounds",
+    "blamers",
+  ];
 
 console.log(ana.anagramsFor("threads", listOfWords).length == 4);
-console.log(ana.anagramsFor("threads", listOfWords)[0] == "threads");
-console.log(ana.anagramsFor("threads", listOfWords)[1] == "trashed");
-console.log(ana.anagramsFor("threads", listOfWords)[2] == "hardest");
-console.log(ana.anagramsFor("threads", listOfWords)[3] == "hatreds");
+console.log(
+  JSON.stringify(ana.anagramsFor("threads", listOfWords)) ==
+    JSON.stringify(["threads", "trashed", "hardest", "hatreds"])
+);
+console.log(
+  JSON.stringify(ana.anagramsFor("marbles", listOfWords)) ==
+    JSON.stringify(["marbles", "rambles", "blamers"])
+);
+console.log(
+  JSON.stringify(ana.anagramsFor("sister", listOfWords)) ==
+    JSON.stringify(["sister", "resits", "resist"])
+);
+console.log(
+  JSON.stringify(ana.anagramsFor("bowler", listOfWords)) ==
+    JSON.stringify(["bowler", "blower"])
+);
 
 console.log(ana.anagramsFor("apple", listOfWords).length == 0);
