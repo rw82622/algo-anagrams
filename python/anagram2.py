@@ -1,4 +1,8 @@
-# Don't forget to run the tests (and create some of your own)
+from character_match import is_character_match as is_anagram
 
 def anagrams_for(word, list_of_words):
-		# your code here
+    new_list = []
+    for item in list_of_words:
+        if (is_anagram(word, item)):
+            new_list.append(item)
+    return new_list
